@@ -9,14 +9,22 @@
 #include <SFML/Graphics.hpp>
 
 
-class CircleComponent : public Component , sf::Drawable {
+class CircleComponent : public Component, sf::Drawable {
 public:
     CircleComponent(float rad, sf::Color color);
+
     void Update() override;
-    void DrawComponent(sf::RenderWindow& window) override;
+
+    void DrawComponent(sf::RenderWindow &window) override;
+
+    void SetPosition(sf::Vector2<float>& position);
 
 private:
-   sf::CircleShape circle;
+    sf::CircleShape circle;
+
+    sf::Transformable transform;
+
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
 };
+
 #endif //GAMEENGINE_CIRCLECOMPONENT_H

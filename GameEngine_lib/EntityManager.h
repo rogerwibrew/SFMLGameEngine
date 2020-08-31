@@ -7,6 +7,7 @@
 
 
 #include <vector>
+#include <iostream>
 #include "Entity.h"
 
 class EntityManager {
@@ -16,6 +17,8 @@ public:
     void Update();
     void Draw();
 
+
+    void CleanUp();
 
 private:
     std::vector<Entity*> entities;

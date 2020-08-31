@@ -25,3 +25,14 @@ void EntityManager::Draw() {
     for (auto &entity : entities)
         entity->Draw();
 }
+
+void EntityManager::CleanUp() {
+    for(auto &entity: entities){
+        for(auto &component : entity->GetComponents()){
+            delete component;
+            std::cout << "Component Deleted" << std::endl;
+        }
+        delete entity;
+        std::cout << "Entity Deleted" << std::endl;
+    }
+}

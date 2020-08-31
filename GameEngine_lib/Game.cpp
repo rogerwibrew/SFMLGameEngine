@@ -12,8 +12,15 @@ Game::Game() :
         window(sf::VideoMode(Globals::WINDOW_WIDTH, Globals::WINDOW_HEIGHT), "Game") {
     auto circle = new Entity(window);
     auto circleComponent = new CircleComponent(20.f, sf::Color::Red);
+    sf::Vector2<float> postion = sf::Vector2<float>(50.f, 50.f);
+    circleComponent->SetPosition(postion);
     circle->AddComponent(circleComponent);
     manager.addEntity(circle);
+    // TODO Add moverComponent
+}
+
+Game::~Game() {
+    manager.CleanUp();
 }
 
 

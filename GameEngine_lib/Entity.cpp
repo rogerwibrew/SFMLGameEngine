@@ -24,3 +24,7 @@ void Entity::Draw() const {
     for(auto& component : components)
         component->DrawComponent(window);
 }
+
+std::vector<Component *> Entity::GetComponents() {
+    return components;
+}

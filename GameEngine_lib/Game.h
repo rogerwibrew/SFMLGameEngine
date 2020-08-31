@@ -16,6 +16,7 @@
 class Game {
 public:
     Game();
+    ~Game();
     void run();
     void ProcessInput();
     void Update();

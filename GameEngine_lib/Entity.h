@@ -20,10 +20,12 @@ public:
     void AddComponent(T component){
        components.push_back(component);
     }
+    std::vector<Component*> GetComponents();
 
 private:
     sf::RenderWindow& window;
    std::vector<Component*> components;
 };
+
 
 #endif //GAMEENGINE_ENTITY_H

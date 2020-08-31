@@ -13,5 +13,7 @@ public:
     virtual void Update() = 0;
 
     virtual void DrawComponent(sf::RenderWindow& window) = 0;
+
+// TODO Destructor
 };
 #endif //GAMEENGINE_COMPONENT_H

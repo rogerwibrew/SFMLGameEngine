@@ -10,7 +10,7 @@ void CircleComponent::Update() {
 
 void CircleComponent::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 
-    target.draw(circle);
+    target.draw(circle, transform.getTransform());
 }
 
 void CircleComponent::DrawComponent(sf::RenderWindow& window) {
@@ -22,5 +22,10 @@ CircleComponent::CircleComponent(float rad, sf::Color color)
 {
     circle.setRadius(rad);
     circle.setFillColor(color);
+}
+
+void CircleComponent::SetPosition(sf::Vector2<float> &position) {
+    circle.setPosition(position);
+
 }
 
