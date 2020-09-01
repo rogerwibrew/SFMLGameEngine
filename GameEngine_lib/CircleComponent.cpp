@@ -9,7 +9,7 @@ void CircleComponent::Update() {
 }
 
 void CircleComponent::draw(sf::RenderTarget &target, sf::RenderStates states) const {
-
+    sf::Transformable transform = parent->getTransform();
     target.draw(circle, transform.getTransform());
 }
 
@@ -18,14 +18,8 @@ void CircleComponent::DrawComponent(sf::RenderWindow& window) {
     draw(window, states);
 }
 
-CircleComponent::CircleComponent(float rad, sf::Color color)
-{
+CircleComponent::CircleComponent(Entity *parent, float rad, sf::Color color) : Component(parent) {
     circle.setRadius(rad);
     circle.setFillColor(color);
-}
-
-void CircleComponent::SetPosition(sf::Vector2<float> &position) {
-    circle.setPosition(position);
-
 }
 

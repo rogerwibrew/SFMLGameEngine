@@ -28,3 +28,11 @@ void Entity::Draw() const {
 std::vector<Component *> Entity::GetComponents() {
     return components;
 }
+
+const sf::Transformable &Entity::getTransform() const {
+    return transform;
+}
+
+void Entity::setTransform(const sf::Vector2f position) {
+    Entity::transform.setPosition(position);
+}

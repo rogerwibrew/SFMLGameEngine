@@ -5,6 +5,7 @@
 #ifndef GAMEENGINE_GAME_H
 #define GAMEENGINE_GAME_H
 
+#include <memory>
 #include <SFML/Graphics.hpp>
 #include "EntityManager.h"
 #include "Globals.h"

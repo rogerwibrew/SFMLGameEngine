@@ -6,14 +6,16 @@ set(HEADER_FILES
         Entity.h
         Component.h
         CircleComponent.h
-        EntityManager.h)
+        EntityManager.h
+        MoverComponent.h)
 
 set(SOURCE_FILES
         Game.cpp
         Globals.cpp
         CircleComponent.cpp
         Entity.cpp
-        EntityManager.cpp)
+        EntityManager.cpp
+        MoverComponent.cpp)
 
 find_package(SFML 2.5 COMPONENTS graphics audio)
 

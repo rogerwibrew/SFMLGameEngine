@@ -6,12 +6,13 @@
 #define GAMEENGINE_CIRCLECOMPONENT_H
 
 #include "Component.h"
+#include "Entity.h"
 #include <SFML/Graphics.hpp>
 
 
 class CircleComponent : public Component, sf::Drawable {
 public:
-    CircleComponent(float rad, sf::Color color);
+    CircleComponent(Entity *parent, float rad, sf::Color color);
 
     void Update() override;
 
@@ -21,8 +22,6 @@ public:
 
 private:
     sf::CircleShape circle;
-
-    sf::Transformable transform;
 
     void draw(sf::RenderTarget &target, sf::RenderStates states) const override;
 };

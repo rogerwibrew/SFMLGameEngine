@@ -12,19 +12,30 @@
 
 class Entity {
 public:
-    Entity(sf::RenderWindow& window);
+    Entity(sf::RenderWindow &window);
+
     ~Entity();
+
     void Update();
+
     void Draw() const;
-    template <typename T>
-    void AddComponent(T component){
-       components.push_back(component);
+
+    template<typename T>
+    void AddComponent(T component) {
+        components.push_back(component);
     }
-    std::vector<Component*> GetComponents();
+
+    std::vector<Component *> GetComponents();
+
+    const sf::Transformable &getTransform() const;
+
+    void setTransform(const sf::Vector2f position);
+
 
 private:
-    sf::RenderWindow& window;
-   std::vector<Component*> components;
+    sf::RenderWindow &window;
+    std::vector<Component *> components;
+    sf::Transformable transform;
 };
 
 

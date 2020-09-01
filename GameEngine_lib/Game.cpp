@@ -11,18 +11,18 @@ Game::Game() :
         manager(window),
         window(sf::VideoMode(Globals::WINDOW_WIDTH, Globals::WINDOW_HEIGHT), "Game") {
     auto circle = new Entity(window);
-    auto circleComponent = new CircleComponent(20.f, sf::Color::Red);
-    sf::Vector2<float> postion = sf::Vector2<float>(50.f, 50.f);
-    circleComponent->SetPosition(postion);
+    auto circleComponent = new CircleComponent(circle,50.f,sf::Color::Blue);
+    circle->setTransform(sf::Vector2f(50.f, 50.f));
+    sf::Vector2<float> position = sf::Vector2<float>(50.f, 50.f);
     circle->AddComponent(circleComponent);
     manager.addEntity(circle);
     // TODO Add moverComponent
+    // TODO Use smart pointers
 }
 
 Game::~Game() {
     manager.CleanUp();
 }
-
 
 void Game::run() {
     while (window.isOpen()) {
@@ -42,7 +42,6 @@ void Game::ProcessInput() {
 
 void Game::Update() {
     manager.Update();
-
 }
 
 void Game::Render() {
