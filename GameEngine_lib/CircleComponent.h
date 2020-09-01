@@ -18,8 +18,6 @@ public:
 
     void DrawComponent(sf::RenderWindow &window) override;
 
-    void SetPosition(sf::Vector2<float>& position);
-
 private:
     sf::CircleShape circle;
 

@@ -10,9 +10,7 @@ window(window)
 
 }
 
-Entity::~Entity() {
-
-}
+Entity::~Entity() = default;
 
 void Entity::Update() {
     for(auto& component : components){
@@ -29,10 +27,3 @@ std::vector<Component *> Entity::GetComponents() {
     return components;
 }
 
-const sf::Transformable &Entity::getTransform() const {
-    return transform;
-}
-
-void Entity::setTransform(const sf::Vector2f position) {
-    Entity::transform.setPosition(position);
-}

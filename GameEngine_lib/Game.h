@@ -12,6 +12,7 @@
 #include "Entity.h"
 #include "Component.h"
 #include "CircleComponent.h"
+#include "MoverComponent.h"
 
 
 class Game {

@@ -9,8 +9,7 @@ void CircleComponent::Update() {
 }
 
 void CircleComponent::draw(sf::RenderTarget &target, sf::RenderStates states) const {
-    sf::Transformable transform = parent->getTransform();
-    target.draw(circle, transform.getTransform());
+    target.draw(circle, parent->getTransform());
 }
 
 void CircleComponent::DrawComponent(sf::RenderWindow& window) {
@@ -22,4 +21,3 @@ CircleComponent::CircleComponent(Entity *parent, float rad, sf::Color color) : C
     circle.setRadius(rad);
     circle.setFillColor(color);
 }
-

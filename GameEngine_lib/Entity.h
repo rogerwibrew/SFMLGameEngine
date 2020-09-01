@@ -10,7 +10,7 @@
 #include "Component.h"
 #include "CircleComponent.h"
 
-class Entity {
+class Entity : public sf::Transformable{
 public:
     Entity(sf::RenderWindow &window);
 
@@ -24,19 +24,12 @@ public:
     void AddComponent(T component) {
         components.push_back(component);
     }
-
     std::vector<Component *> GetComponents();
-
-    const sf::Transformable &getTransform() const;
-
-    void setTransform(const sf::Vector2f position);
 
 
 private:
     sf::RenderWindow &window;
     std::vector<Component *> components;
-    sf::Transformable transform;
 };
-
 
 #endif //GAMEENGINE_ENTITY_H
